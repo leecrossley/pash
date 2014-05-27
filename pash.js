@@ -16,7 +16,7 @@ var complete = function (callback, error, derivedKey) {
         handleError(error, callback);
     }
     if (typeof (callback) === "function") {
-        return callback(derivedKey);
+        return callback(new Buffer(derivedKey));
     }
 };
 
