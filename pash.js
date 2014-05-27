@@ -3,21 +3,28 @@ var crypto = require("crypto");
 var pash = function (password, salt, callback) {
     "use strict";
     if (!password) {
-        throw "No password supplied";
+        handleError("No password supplied", callback);
     }
     if (!salt) {
-        throw "No salt supplied";
+        handleError("No salt supplied", callback);
     }
     return crypto.pbkdf2(password, salt, 10000, 64, complete.bind(null, callback));
 };
 
 var complete = function (callback, error, key) {
-    if (typeof (callback) === "function") {
-        if (error) {
-            return callback(error);
-        }
-        return callback(new Buffer(key));
+    if (error) {
+        handleError(error, callback);
     }
+    if (typeof (callback) === "function") {
+        return callback(derivedKey);
+    }
+};
+
+var handleError = function (error, callback) {
+    if (typeof (callback) === "function") {
+        return callback(error);
+    }
+    throw error;
 };
 
 if (typeof (module) !== "undefined" && module.exports) {

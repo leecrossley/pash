@@ -1,9 +1,9 @@
 {
   "name": "pash",
   "author": "Lee Crossley <leee@hotmail.co.uk> (http://ilee.co.uk/)",
-  "description": "",
+  "description": "Simple and strong password hashing using core node crypto.",
   "homepage": "http://ilee.co.uk",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "pash.js",
   "keywords": [
     "password",
