@@ -11,7 +11,7 @@ var pash = function (password, salt, callback) {
     return crypto.pbkdf2(password, salt, 10000, 64, complete.bind(null, callback));
 };
 
-var complete = function (callback, error, key) {
+var complete = function (callback, error, derivedKey) {
     if (error) {
         handleError(error, callback);
     }
