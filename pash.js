@@ -4,9 +4,11 @@ var pash = function (password, salt, callback) {
     "use strict";
     if (!password) {
         handleError("No password supplied", callback);
+        return;
     }
     if (!salt) {
         handleError("No salt supplied", callback);
+        return;
     }
     return crypto.pbkdf2(password, salt, 10000, 64, complete.bind(null, callback));
 };
@@ -14,6 +16,7 @@ var pash = function (password, salt, callback) {
 var complete = function (callback, error, derivedKey) {
     if (error) {
         handleError(error, callback);
+        return;
     }
     if (typeof (callback) === "function") {
         return callback(new Buffer(derivedKey));
