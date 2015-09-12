@@ -3,7 +3,7 @@
   "author": "Lee Crossley <leee@hotmail.co.uk> (http://ilee.co.uk/)",
   "description": "Simple and strong password hashing using core node crypto.",
   "homepage": "http://ilee.co.uk",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "pash.js",
   "keywords": [
     "password",

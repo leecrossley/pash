@@ -5,8 +5,8 @@ Simple and strong password hashing using core node crypto.
 ```
 var pash = require("pash");
 
-pash("password", "salt", function(raw) {
-  hash = raw.toString('base64').slice(0, 6);
+pash("password", "salt", function (raw) {
+    var hash = raw.toString("base64").slice(0, 6);
 });
 ```
 
