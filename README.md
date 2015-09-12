@@ -5,7 +5,9 @@ Simple and strong password hashing using core node crypto.
 ```
 var pash = require("pash");
 
-pash("password", "salt", callback);
+pash("password", "salt", function(raw) {
+  hash = raw.toString('base64').slice(0, 6);
+});
 ```
 
 Callback will be called with an error, or a derived key buffer.
